@@ -24,6 +24,15 @@ router.post('/add', async function (req, res) {
     res.send({ status: true })
 });
 
+router.post("/delete", async (req, res) => {
+    try {
+        let user = await HomeUser.findByIdAndDelete(req.body.Id)
+        return res.send({ status: true})
+    } catch (error) {
+        return res.send({status:false});
+    }
+})
+
 router.post("/getallusers", async (req, res) => {
     const data = await HomeUser.find({});
     res.send({ HomeUser: data });
