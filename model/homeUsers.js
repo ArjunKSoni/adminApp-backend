@@ -2,7 +2,7 @@ const mongoose =require("mongoose");
 const HomeUserSchema = mongoose.Schema({
     Name: String,
     Email: String,
-    Phone: Number
+    Phone: String
 })
 
 const HomeUser=new mongoose.model("homeuser",HomeUserSchema);
